@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cm_advanced_kanban">
+            <field name="name">客户看板</field>
+            <field name="model">cm.cust.stage</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="name">
+                    <field name="name">cust-kanban</field>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <a type="close">
+                                    <!--
+                                    <field name="name"/>-->
+                                    <field name="customer_ids"/>
+                                </a>
+                            </div>
+                        </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- action opening views on models -->
+    <act_window id="cm_advanced_action_window_stage"
+                name="客户状态"
+                res_model="cm.cust.stage"
+                view_mode="kanban,tree,form"
+                target="current"
+                limit="7"/>
+    <!--
+    <record model="ir.actions.act_window" id="cm_advanced_action_window_stage">
+        <field name="name">客户状态</field>
+        <field name="res_model">cm.cust.stage</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+    -->
+    <!--actions -->
+    <menuitem name="客户状态" id="cm_advanced_menu_stage_list" parent="cust-manage.cust_manage_menu_1"
+              action="cm_advanced_action_window_stage"/>
+</data>
+        </odoo>

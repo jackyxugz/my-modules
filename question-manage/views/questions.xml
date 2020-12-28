@@ -1,0 +1,86 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="question-manage.list">
+            <field name="name">留言列表</field>
+            <field name="model">qm.question</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="x_question"/>
+                    <field name="x_answer"/>
+                    <field name="detail"/>
+                    <field name="image"/>
+                    <field name="create_on" attrs="{'required': [('name','=', False)], 'readonly': [('name','!=', False)]}"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="question-manage.form">
+            <field name="name">留言表单</field>
+            <field name="model">qm.question</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <!--
+                        <button name="do_close" type="object" string="关闭留言" confirm="是否关闭该留言？"/>
+                        <button name="do_open" type="object" string="重新打开" confirm="是否重新打开该留言？"/>
+                        -->
+                    </header>
+                    <sheet>
+                        <group name="group_top" col="2">
+                            <group name="group_left">
+                                <field name="name"/>
+                                <field name="create_on" attrs="{'required': [('name','=', False)], 'readonly': [('name','!=', False)]}"/>
+                                <field name="x_question"/>
+                                <field name="x_answer"/>
+                                <field name="image"/>
+                                <field name="user_id"/>
+                                <!--
+                                <field name="is_closed"/>
+                                -->
+                            </group>
+                            <!--
+                            <group name="group_right">
+                                <field name="is_closed"/>
+                            </group>
+                            -->
+                        </group>
+                        <notebook>
+                            <page string="备注">
+                                <field name="detail"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- search view -->
+        <record model="ir.ui.view" id="question-manage.search">
+            <field name="name">留言搜索</field>
+            <field name="model">qm.question</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="detail"/>
+                    <field name="is_closed"/>
+                    <field name="user_id"/>
+                </search>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="question-manage.action_window">
+            <field name="name">我要留言</field>
+            <field name="res_model">qm.question</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem name="我要留言" id="question-manage.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="留言管理" id="question-manage.menu_1" parent="question-manage.menu_root"/>
+        <!-- actions -->
+        <menuitem name="留言列表" id="question-manage.menu_1_list" parent="question-manage.menu_1" action="question-manage.action_window"/>
+
+    </data>
+</odoo>

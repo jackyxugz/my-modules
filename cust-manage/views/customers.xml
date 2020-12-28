@@ -1,0 +1,238 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="cust-manage.list">
+            <field name="name">客户列表</field>
+            <field name="model">cm.customer</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="proj_name" optional="show"/>
+                    <field name="hk_comp_name"/>
+                    <field name="hk_is_secr"/>
+                    <field name="hk_addr_is_change"/>
+                    <field name="hk_is_mpf"/>
+                    <field name="hk_lastyear_turnover" optional="hide"/>
+                    <field name="hk_industry" optional="hide"/>
+                    <field name="hk_license" optional="hide"/>
+                    <field name="hk_num_employees" optional="hide"/>
+                    <field name="hk_http" optional="hide"/>
+                    <field name="hk_product_service" optional="hide"/>
+                    <field name="cn_comp_name" optional="show"/>
+                    <field name="create_date" string="录入时间" optional="show"/>
+                    <field name="user_id" string="录入人" optional="show"/>
+                    <field name="cn_addr" optional="hide"/>
+                    <field name="cn_lastyear_turnover" optional="hide"/>
+                    <field name="cn_industry" optional="hide"/>
+                    <field name="cn_license" optional="hide"/>
+                    <field name="cn_num_employees" optional="hide"/>
+                    <field name="cn_set_time" optional="hide"/>
+                    <field name="cn_http" optional="hide"/>
+                    <field name="cn_product_service" optional="hide"/>
+                    <field name="name_shareholder" optional="hide"/>
+                    <field name="name_employees" optional="hide"/>
+                    <field name="em_hk_phone_number" optional="hide"/>
+                    <field name="em_cn_phone_number" optional="hide"/>
+                    <field name="em_email_addr" optional="hide"/>
+                    <field name="em_email_pwd" optional="hide"/>
+                    <field name="em_email_http" optional="hide"/>
+                    <field name="sh_hk_phone_number" optional="hide"/>
+                    <field name="sh_cn_phone_number" optional="hide"/>
+                    <field name="sh_email_addr" optional="hide"/>
+                    <field name="sh_email_pwd" optional="hide"/>
+                    <field name="sh_email_http" optional="hide"/>
+                    <field name="write_date" string="修改时间" optional="hide"/>
+                    <field name="write_uid" string="修改人" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="cust-manage.form">
+            <field name="name">客户表单</field>
+            <field name="model">cm.customer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--
+                   <header>
+                       <button name="do_close" type="object" string="关闭留言" confirm="是否关闭该留言？"/>
+                       <button name="do_open" type="object" string="重新打开" confirm="是否重新打开该留言？"/>
+                   </header>
+                   -->
+                    <sheet>
+                        <!-- 香港公司信息 -->
+                        <group name="group_1" col="2">
+                            <group name="group_left">
+                                <field name="proj_name"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <group name="group_2" col="2">
+                            <group name="group_left">
+                                <field name="hk_comp_name"/>
+                                <field name="hk_addr"/>
+                                <field name="hk_http"/>
+                                <field name="hk_industry"/>
+                                <field name="hk_license"/>
+                                <field name="hk_lastyear_turnover"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="hk_num_employees"/>
+                                <field name="hk_is_secr"/>
+                                <field name="hk_addr_is_change"/>
+                                <field name="hk_is_mpf"/>
+                                <field name="hk_product_service"/>
+                            </group>
+                        </group>
+
+                        <!--国内公司信息-->
+                        <group name="group_3" col="2">
+                            <group name="group_left">
+                                <field name="cn_comp_name"/>
+                                <field name="cn_addr"/>
+                                <field name="cn_http"/>
+                                <field name="cn_industry"/>
+                                <field name="cn_license"/>
+                                <field name="cn_lastyear_turnover"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="cn_num_employees"/>
+                                <field name="cn_set_time"/>
+                                <field name="cn_product_service"/>
+                            </group>
+                        </group>
+                        <group name="group_4" col="2">
+                            <group name="group_left">
+                                <field name="name_shareholder"/>
+                                <field name="sh_hk_phone_number"/>
+                                <field name="sh_cn_phone_number"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="sh_email_addr"/>
+                                <field name="sh_email_pwd"/>
+                                <field name="sh_email_http"/>
+                            </group>
+                        </group>
+                        <group name="group_5" col="2">
+                            <group name="group_left">
+                                <field name="name_employees"/>
+                                <field name="em_hk_phone_number"/>
+                                <field name="em_cn_phone_number"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="em_email_addr"/>
+                                <field name="em_email_pwd"/>
+                                <field name="em_email_http"/>
+                            </group>
+                        </group>
+
+                        <!--上传文件组-->
+                        <group name="group_6" col="2">
+                            <group name="group_left">
+                                <field name="file_proj_jczl" filename="file_proj_name_jczl"/>
+                                <field name="file_proj_name_jczl" invisible="1"/>
+                                <field name="file_proj_sjzl" filename="file_proj_name_sjzl"/>
+                                <field name="file_proj_name_sjzl" invisible="1"/>
+                                <field name="file_proj_ywdj" filename="file_proj_name_ywdj"/>
+                                <field name="file_proj_name_ywdj" invisible="1"/>
+                                <field name="file_proj_mpf" filename="file_proj_name_mpf"/>
+                                <field name="file_proj_name_mpf" invisible="1"/>
+                                <field name="file_proj_qt" filename="file_proj_name_qt"/>
+                                <field name="file_proj_name_qt" invisible="1"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="file_plan_one" filename="file_plan_name_one"/>
+                                <field name="file_plan_name_one" invisible="1"/>
+                                <field name="file_plan_two" filename="file_plan_name_two"/>
+                                <field name="file_plan_name_two" invisible="1"/>
+                            </group>
+                        </group>
+                        <span>(注意：所有上传的单个文件不能超过64M)</span>
+
+                        <!-- BUD专项基金计划书 -->
+                        <notebook>
+                            <page string="BUD专项基金计划书">
+                                <field name="Special_fund_plan" placeholder="将《BUG专项基金计划书》的内容复制后粘贴在这里"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="cust-manage.search">
+            <field name="name">客户搜索</field>
+            <field name="model">cm.customer</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="proj_name"/>
+                    <field name="cn_comp_name"/>
+                    <field name="hk_comp_name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- 日历 view -->
+        <!--
+        <record id="view_calendar_cust_stage" model="ir.ui.view">
+            <field name="model">cm.customer</field>
+            <field name="arch" type="xml">
+                <calendar date_start="create_date" color="user_id" display="[hk_comp_name], 状态 [stage_id]" >
+                    <field name="hk_comp_name" />
+                    <field name="stage_id" />
+                </calendar>
+            </field>
+        </record>
+        -->
+
+        <!-- 图表 view -->
+        <!--
+        <record id="view_graph_cust" model="ir.ui.view">
+            <field name="model">cm.customer</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="stage_id" />
+                    <field name="effort_estimate" type="measure" />
+                </graph>
+            </field>
+        </record>
+        -->
+
+        <!-- 图形 view -->
+        <!--
+        <record id="view_pivot_cust" model="ir.ui.view">
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="stage_id" type="col" />
+                    <field name="user_id" />
+                    <field name="date_deadline" interval="week" />
+                    <field name="effort_estimate" type="measure" />
+                </pivot>
+            </field>
+        </record>
+        -->
+
+        <!-- actions opening views on models -->
+        <act_window id="cust_manage_action_window"
+                    name="客户管理"
+                    res_model="cm.customer"
+                    view_mode="tree,form"
+                    target="current"
+                    limit="20"/>
+        <!--
+        <record model="ir.actions.act_window" id="cust_manage_action_window">
+            <field name="name">客户管理</field>
+            <field name="res_model">cm.customer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        <!-- Top menu item -->
+        <menuitem name="客户管理" id="cust_manage_menu_root" web_icon="xunchao,static/description/icon.png"/>
+        <!-- menu categories -->
+        <menuitem name="客户管理" id="cust_manage_menu_1" parent="cust_manage_menu_root"/>
+        <!-- actions -->
+        <menuitem name="客户列表" id="cust_manage_menu_1_list" parent="cust_manage_menu_1"
+                  action="cust_manage_action_window"/>
+    </data>
+</odoo>

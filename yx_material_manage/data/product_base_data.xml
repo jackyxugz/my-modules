@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="cat_dianrong" model="product.category">
+            <field name="name">电容</field>
+        </record>
+        <record id="cat_dianzu" model="product.category">
+            <field name="name">电阻</field>
+        </record>
+        <record id="cat_diangan" model="product.category">
+            <field name="name">电感</field>
+        </record>
+        <record id="cat_cizhu" model="product.category">
+            <field name="name">磁珠</field>
+        </record>
+        <record id="cat_ic" model="product.category">
+            <field name="name">IC类</field>
+        </record>
+        <record id="cat_jz" model="product.category">
+            <field name="name">晶振</field>
+        </record>
+        <record id="cat_ejg" model="product.category">
+            <field name="name">二极管</field>
+        </record>
+        <record id="cat_sjg" model="product.category">
+            <field name="name">三极管</field>
+        </record>
+        <record id="cat_fgejg" model="product.category">
+            <field name="name">发光二极管</field>
+        </record>
+        <record id="cat_esdtvs" model="product.category">
+            <field name="name">ESD_TVS</field>
+        </record>
+        <record id="cat_ljq" model="product.category">
+            <field name="name">连接器</field>
+        </record>		
+        <record id="cat_pcb" model="product.category">
+            <field name="name">PCB</field>
+        </record>
+        <record id="cat_pcba" model="product.category">
+            <field name="name">PCBA</field>
+        </record>
+        <record id="cat_jgjkt" model="product.category">
+            <field name="name">结构件壳体</field>
+        </record>
+
+        <record id="cat_chengpin" model="product.category">
+            <field name="name">成品</field>
+        </record>
+        <record id="cat_shangpin" model="product.category">
+            <field name="name">商品</field>
+        </record>
+
+        <record id="seq_product_category_dianrong" model="ir.sequence">
+            <field name="name">电容编码</field>
+            <field name="code">product.category.dianrong</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001001</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_dianzu_diangan" model="ir.sequence">
+            <field name="name">电阻电感编码</field>
+            <field name="code">product.category.dianzu_diangan</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001002</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_ic" model="ir.sequence">
+            <field name="name">IC编码</field>
+            <field name="code">product.category.ic</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001003</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_jg" model="ir.sequence">
+            <field name="name">杂类晶振二极管等等编码</field>
+            <field name="code">product.category.jg</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001004</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_ljq" model="ir.sequence">
+            <field name="name">连接器类编码</field>
+            <field name="code">product.category.ljq</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001005</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_pcb" model="ir.sequence">
+            <field name="name">PCB光板编码</field>
+            <field name="code">product.category.pcb</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001006</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_pcba" model="ir.sequence">
+            <field name="name">PCBA类 软板导带编码</field>
+            <field name="code">product.category.pcba</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001069</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_mozu" model="ir.sequence">
+            <field name="name">半成品 模组之类编码</field>
+            <field name="code">product.category.mozu</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX001070</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+
+        <record id="seq_product_category_jgjkt" model="ir.sequence">
+            <field name="name">结构件壳体类编码</field>
+            <field name="code">product.category.jgjkt</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX002001</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_dianzu_luosm" model="ir.sequence">
+            <field name="name">结构件螺丝螺母编码</field>
+            <field name="code">product.category.luosm</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX002002</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+        <record id="seq_product_category_zhijia" model="ir.sequence">
+            <field name="name">支架类编码</field>
+            <field name="code">product.category.zhijia</field>
+            <field name="implementation">no_gap</field>
+            <field name="prefix">YX002003</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+        </record>
+
+    </data>
+</odoo>

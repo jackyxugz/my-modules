@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-from odoo.exceptions import except_orm
-from odoo.tools.translate import _
 
 
 class customer(models.Model):
@@ -14,8 +12,9 @@ class customer(models.Model):
     hk_comp_name = fields.Char(string='公司名称(HK)', required=True)
     hk_addr = fields.Char(string='公司地址(HK)')
     hk_is_secr = fields.Boolean(string='是否秘书地址')
-    hk_addr_is_change = fields.Boolean(string='地址是否已变更')
-    hk_is_mpf = fields.Boolean(string='是否有MPF流水')
+    hk_addr_is_change = fields.Boolean(string='是否变更')
+    hk_is_mpf = fields.Boolean(string='是否有MPF')
+    hk_comp_identy = fields.Char(string='商业登记证号')
     hk_lastyear_turnover = fields.Float(string='上一年营业额(港币)', digits=(15, 2))
     hk_industry = fields.Char(string='所属行业(HK)')
     hk_license = fields.Char(string='行业牌照(HK)')
@@ -34,7 +33,8 @@ class customer(models.Model):
     cn_http = fields.Char(string='公司网址(CN)')
     cn_product_service = fields.Char(string='业务/产品/服务(CN)')
 
-    name_shareholder = fields.Char(string='股东姓名')
+    name_shareholder = fields.Char(string='股东姓名(承租人)')
+    sh_shenfenzehng = fields.Char(string='身份证号码')
     sh_cn_phone_number = fields.Char(string='国内手机号码')
     sh_hk_phone_number = fields.Char(string='香港手机号码')
     sh_email_addr = fields.Char(string='股东邮箱帐号')
@@ -48,7 +48,8 @@ class customer(models.Model):
     em_email_pwd = fields.Char(string='联系人邮箱密码')
     em_email_http = fields.Char(string='联系人邮箱登陆地址')
 
-    user_id = fields.Many2one('res.users', string='操作员', default=lambda self: self.env.user, readonly=True, invisible='1')
+    user_id = fields.Many2one('res.users', string='操作员', default=lambda self: self.env.user, readonly=True,
+                              invisible='1')
 
     file_proj_jczl = fields.Binary(string='项目文件(一)', help='每个文件大小不能超过30M')
     file_proj_name_jczl = fields.Char(string="File Name")

@@ -4,3 +4,5 @@ from . import models
 from . import cust_adv
 from . import cust_stage
 from . import cust_channel
+from . import cust_address
+

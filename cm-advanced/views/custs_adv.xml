@@ -23,9 +23,10 @@
             <field name="arch" type="xml">
                 <field name="proj_name" position="after">
                     <field name="stage_id"/>
-                </field>
-                <field name="user_id" position="after">
                     <field name="channel_id"/>
+                </field>
+                <field name="hk_addr_is_change" position="after" >
+                    <field name="address_id" string='变更后的地址' attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
                 </field>
             </field>
         </record>

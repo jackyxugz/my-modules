@@ -28,6 +28,10 @@
         'views/templates.xml',
         'views/custs_adv.xml',
         'views/custs_stage.xml',
+        'views/custs_channel_manage.xml',
+        'views/custs_address_manage.xml',
+        'views/custs_stage_manage.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [

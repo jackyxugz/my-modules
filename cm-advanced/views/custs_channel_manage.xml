@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="cust_channel_list">
+            <field name="name">渠道列表</field>
+            <field name="model">cm.cust.channel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" optional="show"/>
+                    <field name="create_date" string="创建时间" optional="show"/>
+                    <field name="create_uid" string="创建人" optional="show"/>
+                </tree>
+            </field>
+        </record>
+        <!-- explicit form view definition -->
+        <record model="ir.ui.view" id="cust_channel_form">
+            <field name="name"> 地址表单</field>
+            <field name="model">cm.cust.channel</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_1" col="2">
+                            <group name="group_left">
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="cust_channel_search">
+            <field name="name">地址搜索</field>
+            <field name="model">cm.cust.channel</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <act_window id="cust_channel_manage_action_window"
+                    name="地址管理"
+                    res_model="cm.cust.channel"
+                    view_mode="tree,form"
+                    target="current"
+                    limit="25"/>
+
+        <!-- actions -->
+        <menuitem name="渠道管理" id="cm_advanced_menu_channel_list" parent="cust-manage.cust_manage_menu_2"
+              action="cust_channel_manage_action_window"/>
+    </data>
+</odoo>

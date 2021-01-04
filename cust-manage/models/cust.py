@@ -9,7 +9,7 @@ class customer(models.Model):
 
     proj_name = fields.Selection([('BUD', 'BUD'), ('TVP', 'TVP')], string='项目名称', default='BUD')
 
-    hk_comp_name = fields.Char(string='公司名称(HK)', required=True)
+    name = fields.Char(string='公司名称(HK)', required=True)
     hk_addr = fields.Char(string='公司地址(HK)')
     hk_is_secr = fields.Boolean(string='是否秘书地址')
     hk_addr_is_change = fields.Boolean(string='是否变更')
@@ -118,12 +118,12 @@ class customer(models.Model):
             }
     '''
 
-    @api.onchange('hk_comp_name')
-    def _onchange_hk_comp_name(self):
-        hk_comp_name = self.hk_comp_name
-        hk_comp_name_nums = self.env['cm.customer'].search_count([('hk_comp_name', '=', hk_comp_name)])
+    @api.onchange('name')
+    def _onchange_name(self):
+        name = self.name
+        name_nums = self.env['cm.customer'].search_count([('name', '=', name)])
 
-        if hk_comp_name_nums > 0:
+        if name_nums > 0:
             return {
                 "warning": {
                     "title": "请注意：",

@@ -2,4 +2,3 @@
 
 from . import models
 from . import cust
-#from . import projects

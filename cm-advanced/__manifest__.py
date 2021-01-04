@@ -31,6 +31,7 @@
         'views/custs_channel_manage.xml',
         'views/custs_address_manage.xml',
         'views/custs_stage_manage.xml',
+        'views/custs_fee.xml',
 
     ],
     # only loaded in demonstration mode

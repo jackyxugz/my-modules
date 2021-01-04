@@ -4,3 +4,5 @@ access_cm-advanced_cm-stage,cm-advanced,model_cm_cust_stage,base.group_user,1,1,
 access_cm-advanced_cm-channel,cm-advanced,model_cm_cust_channel,base.group_user,1,1,1,1
 access_cm-advanced_cm-address,cm-advanced,model_cm_cust_hkaddress,base.group_user,1,1,1,1
 access_cm-advanced_cm-stage,cm-advanced,model_cm_cust_stage,base.group_user,1,1,1,1
+access_cm-advanced_cm-fee,cm-advanced,model_cm_cust_fee,base.group_user,1,1,1,1
+

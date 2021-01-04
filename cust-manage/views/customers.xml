@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="proj_name" optional="show"/>
-                    <field name="hk_comp_name"/>
+                    <field name="name"/>
                     <field name="hk_is_secr"/>
                     <field name="hk_addr_is_change"/>
                     <field name="hk_is_mpf"/>
@@ -44,6 +44,7 @@
                     <field name="sh_email_http" optional="hide"/>
                     <field name="write_date" string="修改时间" optional="hide"/>
                     <field name="write_uid" string="修改人" optional="hide"/>
+
                 </tree>
             </field>
         </record>
@@ -74,20 +75,21 @@
                             <page string="公司基础信息">
                                 <group name="group_2" col="2">
                                     <group name="group_left">
-                                        <field name="hk_comp_name"/>
+                                        <field name="name"/>
                                         <field name="hk_addr"/>
                                         <field name="hk_http"/>
                                         <field name="hk_industry"/>
                                         <field name="hk_license"/>
-                                        <field name="hk_lastyear_turnover"/>
-                                        <field name="hk_num_employees"/>
+                                        <field name="hk_is_secr"/>
+                                        <field name="hk_addr_is_change"/>
                                     </group>
                                     <group name="group_right">
+                                        <field name="hk_lastyear_turnover"/>
+                                        <field name="hk_num_employees"/>
                                         <field name="hk_product_service"/>
                                         <field name="hk_comp_identy"/>
                                         <field name="hk_is_secr"/>
                                         <field name="hk_is_mpf"/>
-                                        <field name="hk_addr_is_change"/>
                                     </group>
                                 </group>
 
@@ -99,10 +101,10 @@
                                         <field name="cn_http"/>
                                         <field name="cn_industry"/>
                                         <field name="cn_license"/>
-                                        <field name="cn_lastyear_turnover"/>
-                                        <field name="cn_num_employees"/>
                                     </group>
                                     <group name="group_right">
+                                        <field name="cn_lastyear_turnover"/>
+                                        <field name="cn_num_employees"/>
                                         <field name="cn_product_service"/>
                                         <field name="cn_set_time"/>
                                     </group>
@@ -175,7 +177,7 @@
                 <search>
                     <field name="proj_name"/>
                     <field name="cn_comp_name"/>
-                    <field name="hk_comp_name"/>
+                    <field name="name"/>
                 </search>
             </field>
         </record>
@@ -185,8 +187,8 @@
         <record id="view_calendar_cust_stage" model="ir.ui.view">
             <field name="model">cm.customer</field>
             <field name="arch" type="xml">
-                <calendar date_start="create_date" color="user_id" display="[hk_comp_name], 状态 [stage_id]" >
-                    <field name="hk_comp_name" />
+                <calendar date_start="create_date" color="user_id" display="[name], 状态 [stage_id]" >
+                    <field name="name" />
                     <field name="stage_id" />
                 </calendar>
             </field>

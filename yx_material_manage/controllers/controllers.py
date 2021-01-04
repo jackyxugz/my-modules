@@ -94,14 +94,15 @@ class YxMaterialManage(http.Controller):
                 ws.write(line - 1, value2colx0['MFG_NAME01'] - 1, product.MFG_NAME01)
                 ws.write(line - 1, value2colx0['Vendor'] - 1, product.Vendor if product.Vendor else "")
 
-        wb.save(self.src_file_path)
-
-        fp = io.BytesIO() #StringIO()
-        wb.save(fp)
-        fp.seek(0)
-        data = fp.read()
-        fp.close()
-        return data
+        if file_content:
+            fp = io.BytesIO()  # StringIO()
+            wb.save(fp)
+            fp.seek(0)
+            data = fp.read()
+            fp.close()
+            return data
+        else:
+            wb.save(self.src_file_path)
 
     def searchProductTemplate1(self, MFG_PN01):
         product = request.env['product.template'].search([('MFG_PN01','=',MFG_PN01),], limit=1)

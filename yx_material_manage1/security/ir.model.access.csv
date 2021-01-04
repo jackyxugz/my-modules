@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_yx_material_manage_update_product_bom,yx_material_manage.update_product_bom,model_update_product_bom,base.group_user,1,1,1,1

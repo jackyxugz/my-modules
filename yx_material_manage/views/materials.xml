@@ -33,6 +33,7 @@
             <field name="model">product.template</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="name"/>
                     <field name="Code"/>
                     <field name="SMT_Type"/>
                      <field name="categ_id"/>

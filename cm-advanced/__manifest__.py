@@ -32,6 +32,8 @@
         'views/custs_address_manage.xml',
         'views/custs_stage_manage.xml',
         'views/custs_fee.xml',
+        'views/custs_mpf.xml',
+        'views/custs_staff.xml',
 
     ],
     # only loaded in demonstration mode

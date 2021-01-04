@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+        <!-- list view -->
+        <record model="ir.ui.view" id="cust_manage_mpf">
+            <field name="name">收款管理</field>
+            <field name="model">cm.cust.mpf</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_ids"/>
+                    <field name="send_time"/>
+                    <field name="recieve_time"/>
+                    <field name="employer"/>
+                    <field name="huji"/>
+                    <field name="employe_num" />
+                    <field name="mpf_biz"/>
+                    <field name="create_date" string="录入时间" optional="show"/>
+                    <field name="user_id" string="录入人" optional="show"/>
+                    <field name="write_date" string="修改时间" optional="hide"/>
+                    <field name="write_uid" string="修改人" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        <!--  form view  -->
+        <record model="ir.ui.view" id="cust_manage_mpf_form">
+            <field name="name">费用表单</field>
+            <field name="model">cm.cust.mpf</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_1" col="2">
+                            <group name="group_left">
+                                <field name="customer_ids"/>
+                                <field name="send_time"/>
+                                <field name="recieve_time"/>
+                                <field name="employer"/>
+                                <field name="huji"/>
+                                <field name="employe_num"/>
+                                <field name="mpf_status"/>
+                                <field name="mpf_biz"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="cust_manage_mpf_search">
+            <field name="name">费用搜索</field>
+            <field name="model">cm.cust.mpf</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="customer_ids"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="cust_manage_action_window">
+            <field name="name">客户管理</field>
+            <field name="res_model">cm.customer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        <act_window id="cust_manage_mpf_action_window"
+                    name="费用管理"
+                    res_model="cm.cust.mpf"
+                    view_mode="tree,form"
+                    target="current"
+                    limit="25"/>
+
+        <!-- actions -->
+        <menuitem name="MPF管理" id="cm_advanced_menu_mpf_list" parent="cust-manage.cust_manage_menu_1"
+              action="cust_manage_mpf_action_window"/>
+    </data>
+</odoo>

@@ -2,7 +2,7 @@
     <data>
         <!-- list view -->
         <record model="ir.ui.view" id="cust_manage_mpf">
-            <field name="name">收款管理</field>
+            <field name="name">MPF管理</field>
             <field name="model">cm.cust.mpf</field>
             <field name="arch" type="xml">
                 <tree>
@@ -22,7 +22,7 @@
         </record>
         <!--  form view  -->
         <record model="ir.ui.view" id="cust_manage_mpf_form">
-            <field name="name">费用表单</field>
+            <field name="name">MPF表单</field>
             <field name="model">cm.cust.mpf</field>
             <field name="arch" type="xml">
                 <form>
@@ -49,7 +49,7 @@
 
         <!-- search view -->
         <record model="ir.ui.view" id="cust_manage_mpf_search">
-            <field name="name">费用搜索</field>
+            <field name="name">MPF搜索</field>
             <field name="model">cm.cust.mpf</field>
             <field name="arch" type="xml">
                 <search>
@@ -68,7 +68,7 @@
         </record>
         -->
         <act_window id="cust_manage_mpf_action_window"
-                    name="费用管理"
+                    name="MPF管理"
                     res_model="cm.cust.mpf"
                     view_mode="tree,form"
                     target="current"

@@ -2,7 +2,7 @@
     <data>
         <!-- list view -->
         <record model="ir.ui.view" id="cust_manage_fee">
-            <field name="name">收款管理</field>
+            <field name="name">收款列表</field>
             <field name="model">cm.cust.fee</field>
             <field name="arch" type="xml">
                 <tree>
@@ -21,7 +21,7 @@
         </record>
         <!--  form view  -->
         <record model="ir.ui.view" id="cust_manage_fee_form">
-            <field name="name">费用表单</field>
+            <field name="name">收款表单</field>
             <field name="model">cm.cust.fee</field>
             <field name="arch" type="xml">
                 <form>
@@ -47,7 +47,7 @@
 
         <!-- search view -->
         <record model="ir.ui.view" id="cust_manage_fee_search">
-            <field name="name">费用搜索</field>
+            <field name="name">收款搜索</field>
             <field name="model">cm.cust.fee</field>
             <field name="arch" type="xml">
                 <search>

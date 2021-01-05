@@ -14,7 +14,7 @@
         </record>
         <!-- explicit form view definition -->
         <record model="ir.ui.view" id="cust_channel_form">
-            <field name="name"> 地址表单</field>
+            <field name="name"> 渠道表单</field>
             <field name="model">cm.cust.channel</field>
             <field name="arch" type="xml">
                 <form>
@@ -31,7 +31,7 @@
 
         <!-- search view -->
         <record model="ir.ui.view" id="cust_channel_search">
-            <field name="name">地址搜索</field>
+            <field name="name">渠道搜索</field>
             <field name="model">cm.cust.channel</field>
             <field name="arch" type="xml">
                 <search>
@@ -42,7 +42,7 @@
 
         <!-- actions opening views on models -->
         <act_window id="cust_channel_manage_action_window"
-                    name="地址管理"
+                    name="渠道管理"
                     res_model="cm.cust.channel"
                     view_mode="tree,form"
                     target="current"

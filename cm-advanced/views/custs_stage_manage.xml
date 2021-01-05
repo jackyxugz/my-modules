@@ -31,7 +31,7 @@
 
         <!-- search view -->
         <record model="ir.ui.view" id="cust_stage_search">
-            <field name="name">搜索</field>
+            <field name="name">状态搜索</field>
             <field name="model">cm.cust.stage</field>
             <field name="arch" type="xml">
                 <search>

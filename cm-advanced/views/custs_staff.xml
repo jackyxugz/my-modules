@@ -2,7 +2,7 @@
     <data>
         <!-- list view -->
         <record model="ir.ui.view" id="cust_manage_staff">
-            <field name="name">收款管理</field>
+            <field name="name">雇员管理</field>
             <field name="model">cm.cust.staff</field>
             <field name="arch" type="xml">
                 <tree>
@@ -24,7 +24,7 @@
         </record>
         <!--  form view  -->
         <record model="ir.ui.view" id="cust_manage_staff_form">
-            <field name="name">费用表单</field>
+            <field name="name">雇员表单</field>
             <field name="model">cm.cust.staff</field>
             <field name="arch" type="xml">
                 <form>
@@ -51,7 +51,7 @@
 
         <!-- search view -->
         <record model="ir.ui.view" id="cust_manage_staff_search">
-            <field name="name">费用搜索</field>
+            <field name="name">雇员搜索</field>
             <field name="model">cm.cust.staff</field>
             <field name="arch" type="xml">
                 <search>

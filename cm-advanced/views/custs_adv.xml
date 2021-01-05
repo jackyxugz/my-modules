@@ -13,12 +13,6 @@
                 <xpath expr="//field[@name='name']" position="before">
                     <field name="channel_id"/>
                 </xpath>
-                <xpath expr="//field[@name='hk_addr_is_change']" position="after">
-                    <field name="rent_addr" string="租金" optional="hide"/>
-                    <field name="start_time" string="起租时间" optional="hide"/>
-                    <field name="br_recieve" string="BR收到时间" optional="hide"/>
-                    <field name="br_send" string="BR寄出时间" optional="hide"/>
-                </xpath>
 
             </field>
         </record>
@@ -34,10 +28,6 @@
                 </field>
                 <field name="hk_addr_is_change" position="after" >
                     <field name="address_id" string='变更后的地址' attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
-                    <field name="rent_addr" attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
-                    <field name="start_time" attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
-                    <field name="br_recieve" attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
-                    <field name="br_send" attrs="{'invisible': [('hk_addr_is_change', '=', False)]}"/>
                 </field>
             </field>
         </record>

@@ -34,6 +34,7 @@
         'views/custs_fee.xml',
         'views/custs_mpf.xml',
         'views/custs_staff.xml',
+        'views/custs_rent.xml',
 
     ],
     # only loaded in demonstration mode

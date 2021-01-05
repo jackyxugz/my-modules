@@ -8,4 +8,5 @@ from . import cust_address
 from . import cust_fee
 from . import cust_mpf
 from . import cust_staff
+from . import cust_rent
 

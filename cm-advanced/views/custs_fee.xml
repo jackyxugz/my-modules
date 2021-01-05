@@ -11,6 +11,7 @@
                     <field name="recieve_fee"/>
                     <field name="recieve_time"/>
                     <field name="recieve_people"/>
+                    <field name="fee_check"/>
                     <field name="fee_biz" optional="hide"/>
                     <field name="create_date" string="录入时间" optional="show"/>
                     <field name="user_id" string="录入人" optional="show"/>
@@ -66,14 +67,14 @@
         </record>
         -->
         <act_window id="cust_manage_fee_action_window"
-                    name="费用管理"
+                    name="收款管理"
                     res_model="cm.cust.fee"
                     view_mode="tree,form"
                     target="current"
                     limit="25"/>
 
         <!-- actions -->
-        <menuitem name="费用管理" id="cm_advanced_menu_fee_list" parent="cust-manage.cust_manage_menu_1"
+        <menuitem name="收款管理" id="cm_advanced_menu_fee_list" parent="cust-manage.cust_manage_menu_1"
               action="cust_manage_fee_action_window"/>
     </data>
 </odoo>

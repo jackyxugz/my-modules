@@ -3,9 +3,9 @@
 from odoo import models, fields, api
 
 
-class fee(models.Model):
+class fee_manage(models.Model):
     _name = 'cm.cust.fee'
-    _description = '客户租金'
+    _description = '收款管理'
     _order = 'recieve_time'
 
     name = fields.Char('费用名称')
@@ -18,3 +18,5 @@ class fee(models.Model):
     fee_biz = fields.Text('备注')
     user_id = fields.Many2one('res.users', string='录入员', default=lambda self: self.env.user, readonly=True,
                               invisible='1')
+
+

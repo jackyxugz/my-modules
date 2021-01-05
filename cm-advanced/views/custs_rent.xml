@@ -1,0 +1,135 @@
+<odoo>
+    <data>
+        <!-- list view -->
+        <record model="ir.ui.view" id="cust_manage_rent">
+            <field name="name">租金列表</field>
+            <field name="model">cm.cust.rent</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="customer_ids"/>
+                    <field name="start_time"/>
+                    <field name="rent_addr"/>
+                    <field name="month1"/>
+                    <field name="month2"/>
+                    <field name="month3"/>
+                    <field name="month4"/>
+                    <field name="month5"/>
+                    <field name="month6"/>
+                    <field name="month7"/>
+                    <field name="month8"/>
+                    <field name="month9"/>
+                    <field name="month10"/>
+                    <field name="month11"/>
+                    <field name="month12"/>
+                    <field name="month13"/>
+                    <field name="month14"/>
+                    <field name="month15"/>
+                    <field name="month16"/>
+                    <field name="month17"/>
+                    <field name="month18"/>
+                    <field name="month19"/>
+                    <field name="month20"/>
+                    <field name="month21"/>
+                    <field name="month22"/>
+                    <field name="month23"/>
+                    <field name="month24"/>
+                    <field name="hk_comp_identy"/>
+                    <field name="br_recieve"/>
+                    <field name="rent_bz"/>
+                    <field name="create_date" string="录入时间" optional="show"/>
+                    <field name="user_id" string="录入人" optional="show"/>
+                    <field name="write_date" string="修改时间" optional="hide"/>
+                    <field name="write_uid" string="修改人" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+        <!--  form view  -->
+        <record model="ir.ui.view" id="cust_manage_rent_form">
+            <field name="name">租金表单</field>
+            <field name="model">cm.cust.rent</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_1" col="2">
+                            <group name="group_left">
+                                <field name="customer_ids"/>
+                                <field name="start_time"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="user_id"/>
+                                <field name="rent_addr"/>
+                            </group>
+
+                            <group name="group_month_left">
+                                <field name="month1"/>
+                                <field name="month3"/>
+                                <field name="month5" attrs="{'invisible': [('month3', '=', False)]}"/>
+                                <field name="month7" attrs="{'invisible': [('month5', '=', False)]}"/>
+                                <field name="month9" attrs="{'invisible': [('month7', '=', False)]}"/>
+                                <field name="month11" attrs="{'invisible': [('month9', '=', False)]}"/>
+                                <field name="month13" attrs="{'invisible': [('month11', '=', False)]}"/>
+                                <field name="month15" attrs="{'invisible': [('month13', '=', False)]}"/>
+                                <field name="month17" attrs="{'invisible': [('month15', '=', False)]}"/>
+                                <field name="month19" attrs="{'invisible': [('month17', '=', False)]}"/>
+                                <field name="month21" attrs="{'invisible': [('month19', '=', False)]}"/>
+                                <field name="month23" attrs="{'invisible': [('month21', '=', False)]}"/>
+                            </group>
+                            <group name="group_month_right">
+                                <field name="month2"/>
+                                <field name="month4"/>
+                                <field name="month6" attrs="{'invisible': [('month4', '=', False)]}"/>
+                                <field name="month8" attrs="{'invisible': [('month6', '=', False)]}"/>
+                                <field name="month10" attrs="{'invisible': [('month8', '=', False)]}"/>
+                                <field name="month12" attrs="{'invisible': [('month10', '=', False)]}"/>
+                                <field name="month14" attrs="{'invisible': [('month12', '=', False)]}"/>
+                                <field name="month16" attrs="{'invisible': [('month14', '=', False)]}"/>
+                                <field name="month18" attrs="{'invisible': [('month16', '=', False)]}"/>
+                                <field name="month20" attrs="{'invisible': [('month18', '=', False)]}"/>
+                                <field name="month22" attrs="{'invisible': [('month20', '=', False)]}"/>
+                                <field name="month24" attrs="{'invisible': [('month22', '=', False)]}"/>
+                            </group>
+                            <group name="group_last_left">
+                                <field name="hk_comp_identy"/>
+                                <field name="rent_bz"/>
+                            </group>
+                            <group name="group_last_rigth">
+                                <field name="br_recieve"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- search view -->
+        <record model="ir.ui.view" id="cust_manage_rent_search">
+            <field name="name">租金搜索</field>
+            <field name="model">cm.cust.rent</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="customer_ids"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="cust_manage_action_window">
+            <field name="name">客户管理</field>
+            <field name="res_model">cm.customer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        -->
+        <act_window id="cust_manage_rent_action_window"
+                    name="租金管理"
+                    res_model="cm.cust.rent"
+                    view_mode="tree,form"
+                    target="current"
+                    limit="25"/>
+
+        <!-- actions -->
+        <menuitem name="租金管理" id="cm_advanced_menu_rent_list" parent="cust-manage.cust_manage_menu_1"
+                  action="cust_manage_rent_action_window"/>
+    </data>
+</odoo>

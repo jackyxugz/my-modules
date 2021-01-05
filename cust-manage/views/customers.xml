@@ -12,7 +12,6 @@
                     <field name="hk_addr_is_change"/>
                     <field name="hk_is_mpf"/>
                     <field name="sh_shenfenzehng" optional="hide"/>
-                    <field name="hk_comp_identy" optional="hide"/>
                     <field name="hk_lastyear_turnover" optional="hide"/>
                     <field name="hk_industry" optional="hide"/>
                     <field name="hk_license" optional="hide"/>
@@ -87,8 +86,6 @@
                                         <field name="hk_lastyear_turnover"/>
                                         <field name="hk_num_employees"/>
                                         <field name="hk_product_service"/>
-                                        <field name="hk_comp_identy"/>
-                                        <field name="hk_is_secr"/>
                                         <field name="hk_is_mpf"/>
                                     </group>
                                 </group>

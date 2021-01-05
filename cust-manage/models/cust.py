@@ -14,7 +14,6 @@ class customer(models.Model):
     hk_is_secr = fields.Boolean(string='是否秘书地址')
     hk_addr_is_change = fields.Boolean(string='是否变更')
     hk_is_mpf = fields.Boolean(string='是否有MPF')
-    hk_comp_identy = fields.Char(string='商业登记证号')
     hk_lastyear_turnover = fields.Float(string='上一年营业额(港币)', digits=(15, 2))
     hk_industry = fields.Char(string='所属行业(HK)')
     hk_license = fields.Char(string='行业牌照(HK)')

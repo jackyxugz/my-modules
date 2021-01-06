@@ -9,6 +9,7 @@
                     <field name="customer_ids"/>
                     <field name="start_time"/>
                     <field name="rent_addr"/>
+                    <field name="first_addr_rent"/>
                     <field name="month1"/>
                     <field name="month2"/>
                     <field name="month3"/>
@@ -23,16 +24,16 @@
                     <field name="month12"/>
                     <field name="month13"/>
                     <field name="month14"/>
-                    <field name="month15"/>
-                    <field name="month16"/>
-                    <field name="month17"/>
-                    <field name="month18"/>
-                    <field name="month19"/>
-                    <field name="month20"/>
-                    <field name="month21"/>
-                    <field name="month22"/>
-                    <field name="month23"/>
-                    <field name="month24"/>
+                    <field name="month15" optional="hide"/>
+                    <field name="month16" optional="hide"/>
+                    <field name="month17" optional="hide"/>
+                    <field name="month18" optional="hide"/>
+                    <field name="month19" optional="hide"/>
+                    <field name="month20" optional="hide"/>
+                    <field name="month21" optional="hide"/>
+                    <field name="month22" optional="hide"/>
+                    <field name="month23" optional="hide"/>
+                    <field name="month24" optional="hide"/>
                     <field name="hk_comp_identy"/>
                     <field name="br_recieve"/>
                     <field name="rent_bz"/>
@@ -48,51 +49,59 @@
             <field name="name">租金表单</field>
             <field name="model">cm.cust.rent</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="true" create="false">
                     <sheet>
                         <group name="group_1" col="2">
                             <group name="group_left">
                                 <field name="customer_ids"/>
                                 <field name="start_time"/>
+                                <field name="rent_addr"/>
+                                <field name="first_addr_rent"/>
                             </group>
                             <group name="group_right">
                                 <field name="user_id"/>
-                                <field name="rent_addr"/>
                             </group>
-
-                            <group name="group_month_left">
-                                <field name="month1"/>
-                                <field name="month3"/>
-                                <field name="month5" attrs="{'invisible': [('month3', '=', False)]}"/>
-                                <field name="month7" attrs="{'invisible': [('month5', '=', False)]}"/>
-                                <field name="month9" attrs="{'invisible': [('month7', '=', False)]}"/>
-                                <field name="month11" attrs="{'invisible': [('month9', '=', False)]}"/>
-                                <field name="month13" attrs="{'invisible': [('month11', '=', False)]}"/>
-                                <field name="month15" attrs="{'invisible': [('month13', '=', False)]}"/>
-                                <field name="month17" attrs="{'invisible': [('month15', '=', False)]}"/>
-                                <field name="month19" attrs="{'invisible': [('month17', '=', False)]}"/>
-                                <field name="month21" attrs="{'invisible': [('month19', '=', False)]}"/>
-                                <field name="month23" attrs="{'invisible': [('month21', '=', False)]}"/>
-                            </group>
-                            <group name="group_month_right">
-                                <field name="month2"/>
-                                <field name="month4"/>
-                                <field name="month6" attrs="{'invisible': [('month4', '=', False)]}"/>
-                                <field name="month8" attrs="{'invisible': [('month6', '=', False)]}"/>
-                                <field name="month10" attrs="{'invisible': [('month8', '=', False)]}"/>
-                                <field name="month12" attrs="{'invisible': [('month10', '=', False)]}"/>
-                                <field name="month14" attrs="{'invisible': [('month12', '=', False)]}"/>
-                                <field name="month16" attrs="{'invisible': [('month14', '=', False)]}"/>
-                                <field name="month18" attrs="{'invisible': [('month16', '=', False)]}"/>
-                                <field name="month20" attrs="{'invisible': [('month18', '=', False)]}"/>
-                                <field name="month22" attrs="{'invisible': [('month20', '=', False)]}"/>
-                                <field name="month24" attrs="{'invisible': [('month22', '=', False)]}"/>
-                            </group>
-                            <group name="group_last_left">
+                        </group>
+                        <notebook>
+                            <page string="所缴月份">
+                                <group name="group_month_left" col="2">
+                                    <group>
+                                        <field name="month1"/>
+                                        <field name="month3"/>
+                                        <field name="month5" attrs="{'invisible': [('month3', '=', False)]}"/>
+                                        <field name="month7" attrs="{'invisible': [('month5', '=', False)]}"/>
+                                        <field name="month9" attrs="{'invisible': [('month7', '=', False)]}"/>
+                                        <field name="month11" attrs="{'invisible': [('month9', '=', False)]}"/>
+                                        <field name="month13" attrs="{'invisible': [('month11', '=', False)]}"/>
+                                        <field name="month15" attrs="{'invisible': [('month13', '=', False)]}"/>
+                                        <field name="month17" attrs="{'invisible': [('month15', '=', False)]}"/>
+                                        <field name="month19" attrs="{'invisible': [('month17', '=', False)]}"/>
+                                        <field name="month21" attrs="{'invisible': [('month19', '=', False)]}"/>
+                                        <field name="month23" attrs="{'invisible': [('month21', '=', False)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="month2"/>
+                                        <field name="month4"/>
+                                        <field name="month6" attrs="{'invisible': [('month4', '=', False)]}"/>
+                                        <field name="month8" attrs="{'invisible': [('month6', '=', False)]}"/>
+                                        <field name="month10" attrs="{'invisible': [('month8', '=', False)]}"/>
+                                        <field name="month12" attrs="{'invisible': [('month10', '=', False)]}"/>
+                                        <field name="month14" attrs="{'invisible': [('month12', '=', False)]}"/>
+                                        <field name="month16" attrs="{'invisible': [('month14', '=', False)]}"/>
+                                        <field name="month18" attrs="{'invisible': [('month16', '=', False)]}"/>
+                                        <field name="month20" attrs="{'invisible': [('month18', '=', False)]}"/>
+                                        <field name="month22" attrs="{'invisible': [('month20', '=', False)]}"/>
+                                        <field name="month24" attrs="{'invisible': [('month22', '=', False)]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group name="group_last_left" col="2">
+                            <group name="group_last_left_1">
                                 <field name="hk_comp_identy"/>
                                 <field name="rent_bz"/>
                             </group>
-                            <group name="group_last_rigth">
+                            <group name="group_last_right_1">
                                 <field name="br_recieve"/>
                             </group>
                         </group>

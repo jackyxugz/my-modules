@@ -27,7 +27,7 @@
             <field name="name">雇员表单</field>
             <field name="model">cm.cust.staff</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="true" create="false">
                     <sheet>
                         <group name="group_1" col="2">
                             <group name="group_left">

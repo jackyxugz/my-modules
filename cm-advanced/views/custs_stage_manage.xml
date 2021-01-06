@@ -17,7 +17,7 @@
             <field name="name"> 状态表单</field>
             <field name="model">cm.cust.stage</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="true" create="false">
                     <sheet>
                         <group name="group_1" col="2">
                             <group name="group_left">

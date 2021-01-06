@@ -17,7 +17,7 @@
             <field name="name"> 渠道表单</field>
             <field name="model">cm.cust.channel</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="true" create="false">
                     <sheet>
                         <group name="group_1" col="2">
                             <group name="group_left">

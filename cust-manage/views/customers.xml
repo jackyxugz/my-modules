@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <!-- explicit list view definition -->
+        <!--  list view  -->
         <record model="ir.ui.view" id="cust-manage.list">
             <field name="name">客户列表</field>
             <field name="model">cm.customer</field>
@@ -47,12 +47,12 @@
                 </tree>
             </field>
         </record>
-        <!-- explicit form view definition -->
+        <!--  form view  -->
         <record model="ir.ui.view" id="cust-manage.form">
             <field name="name">客户表单</field>
             <field name="model">cm.customer</field>
             <field name="arch" type="xml">
-                <form>
+                <form edit="true" create="false">
                     <!--
                    <header>
                        <button name="do_close" type="object" string="关闭留言" confirm="是否关闭该留言？"/>

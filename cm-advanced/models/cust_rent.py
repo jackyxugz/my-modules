@@ -12,7 +12,7 @@ class rent_manage(models.Model):
     customer_ids = fields.Many2one('cm.customer', string='客户名称')
     start_time = fields.Date('起租时间')
     rent_addr = fields.Float('租金')
-    first_addr_rent = fields.Char('首月租金支付時間')
+    first_addr_rent = fields.Char('首月租金支付时间')
     month1 = fields.Char('第1个月')
     month2 = fields.Char('第2个月')
     month3 = fields.Char('第3个月')

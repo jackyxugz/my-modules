@@ -38,7 +38,6 @@
         <record id="wxxcx_course_category_action_406" model="ir.actions.act_window">
             <field name="name">商品分类</field>
             <field name="res_model">wxxcx.course.category</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="view_ids"

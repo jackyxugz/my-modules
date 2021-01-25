@@ -51,7 +51,6 @@
             <field name="name">付款</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">account.payment</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,kanban,form,graph</field>
             <field name="domain">[]</field>
             <field name="context">{}</field>

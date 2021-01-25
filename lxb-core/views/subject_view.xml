@@ -42,7 +42,7 @@
                     <field name="type" />
                     <newline />
                     <group expand="0" string="分组，按照...">
-                        <filter string="Type" domain="[]"
+                        <filter name="type" string="Type" domain="[]"
                             context="{'group_by':'type'}" />
                     </group>
                 </search>
@@ -52,7 +52,6 @@
             <field name="name">科目</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.subject</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_lxb_subject_search" />
             <field name="domain">[]</field>

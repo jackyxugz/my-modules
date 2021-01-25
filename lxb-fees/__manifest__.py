@@ -21,7 +21,7 @@
     'complexity': "easy",
     'author': 'Scott Liu',
     'website': 'http://www.scott-odoo.com',
-    'depends': ['lxb-core','sale', 'account_invoicing'],
+    'depends': ['lxb-core', 'sale', 'account'],
     'data': [
         'wizard/fees_detail_report_wizard_view.xml',
         'views/fees_terms_view.xml',

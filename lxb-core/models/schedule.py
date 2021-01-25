@@ -48,7 +48,6 @@ class LxbSchedule(models.Model):
         ('unique_schedule_code',
          'unique(code)', 'Code should be unique per schedule!')]
 
-    @api.one
     @api.depends('course_id')
     def generate_shchedule_type(self):
         # 根据课程类型确定计划类型

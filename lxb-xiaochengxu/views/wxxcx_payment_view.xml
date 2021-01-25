@@ -59,7 +59,6 @@
         <record id="wxxcx_payment_action_413" model="ir.actions.act_window">
             <field name="name">支付记录</field>
             <field name="res_model">wxxcx.payment</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="view_ids"

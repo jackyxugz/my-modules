@@ -25,7 +25,7 @@ class LxbCategory(models.Model):
     is_use = fields.Boolean(string='是否启用', default=True, required=True)
     sort = fields.Integer(string='排序')
 
-    @api.one
+
     @api.depends('pid')
     def _compute_level(self):
         level = 0

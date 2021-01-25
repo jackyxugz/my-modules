@@ -2,7 +2,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="fees_detail_report_wizard_form">
-        <field name="name">fees.detail.report.wizard.form</field>
+        <field name="name">fees detail report wizard form</field>
         <field name="model">fees.detail.report.wizard</field>
         <field name="arch" type="xml">
             <form string="费用明细">
@@ -22,7 +22,6 @@
     <record model="ir.actions.act_window" id="fees_detail_report_wizard_act">
         <field name="name">费用明细报表</field>
         <field name="res_model">fees.detail.report.wizard</field>
-        <field name="view_type">form</field>
         <field name="view_mode">form</field>
         <field name="view_id" ref="fees_detail_report_wizard_form" />
         <field name="context">{}</field>

@@ -10,6 +10,7 @@ class customer(models.Model):
     proj_name = fields.Selection([('BUD', 'BUD'), ('TVP', 'TVP')], string='项目名称', default='BUD')
 
     name = fields.Char(string='公司名称(HK)', required=True)
+    hk_name_en = fields.Char(string='公司英文名(HK)')
     hk_addr = fields.Char(string='公司地址(HK)')
     hk_is_secr = fields.Boolean(string='是否秘书地址')
     hk_addr_is_change = fields.Boolean(string='是否变更')

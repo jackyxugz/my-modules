@@ -101,10 +101,10 @@
                     <field name="course_id" />
                     <newline />
                     <group expand="0" string="分组，按照...">
-                        <filter string="开始日期" domain="[]"
+                        <filter name="start_date" string="开始日期" domain="[]"
                             context="{'group_by':'start_date'}" />
-                        <filter string="结束日期" domain="[]" context="{'group_by':'end_date'}" />
-                        <filter string="课程" domain="[]" context="{'group_by':'course_id'}" />
+                        <filter name="end_date" string="结束日期" domain="[]" context="{'group_by':'end_date'}" />
+                        <filter name="course" string="课程" domain="[]" context="{'group_by':'course_id'}" />
                     </group>
                 </search>
             </field>
@@ -113,7 +113,6 @@
             <field name="name">排约课计划</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.schedule</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_lxb_schedule_search" />
             <field name="domain">[]</field>

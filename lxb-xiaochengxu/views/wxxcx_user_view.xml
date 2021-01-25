@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="wxxcx_user_view_tree_1004" model="ir.ui.view">
-            <field name="name">wxxcx.user.view_tree</field>
+            <field name="name">wxxcx user view tree</field>
             <field name="model">wxxcx.user</field>
             <field name="type">tree</field>
             <field name="arch" type="xml">
@@ -35,7 +35,7 @@
             </field>
         </record>
         <record id="wxxcx_user_view_form_1005" model="ir.ui.view">
-            <field name="name">wxxcx.user.view_form</field>
+            <field name="name">wxxcx user view form</field>
             <field name="model">wxxcx.user</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
@@ -72,7 +72,6 @@
         <record id="wxxcx_user_action_405" model="ir.actions.act_window">
             <field name="name">小程序用户</field>
             <field name="res_model">wxxcx.user</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="view_ids"

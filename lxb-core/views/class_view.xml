@@ -63,7 +63,6 @@
             <field name="name">班级</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.class</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_lxb_class_search"/>
             <field name="domain">[]</field>

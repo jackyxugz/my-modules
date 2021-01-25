@@ -11,8 +11,7 @@
 #
 ###############################################################################
 
-from odoo import models, fields, api
-
+from odoo import models, fields,api
 
 class LxbTiming(models.Model):
     _name = 'lxb.timing'
@@ -22,7 +21,7 @@ class LxbTiming(models.Model):
     name = fields.Char('Name', size=16, required=True)
 
     hour = fields.Selection(
-        [('0', '0'), ('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
+        [('0','0'),('1', '1'), ('2', '2'), ('3', '3'), ('4', '4'), ('5', '5'),
          ('6', '6'), ('7', '7'), ('8', '8'), ('9', '9'), ('10', '10'),
          ('11', '11'), ('12', '12')], '开始时间-钟点', required=True)
     minute = fields.Selection(
@@ -34,3 +33,5 @@ class LxbTiming(models.Model):
         [('am', 'AM'), ('pm', 'PM')], '上午/下午', required=True)
 
     sequence = fields.Integer('顺序号')
+
+

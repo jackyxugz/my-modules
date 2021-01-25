@@ -2,7 +2,7 @@
 ###############################################################################
 #
 #
-#WXBizMsgCrypt 使用demo文件
+# WXBizMsgCrypt 使用demo文件
 #
 #
 #
@@ -11,6 +11,7 @@
 from odoo import models, fields, api
 
 from .. import defs
+
 
 class Banner(models.Model):
     _name = 'wxxcx.banner'

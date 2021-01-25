@@ -61,16 +61,17 @@
         </record>
 
         <record id="lxb_course_template_search_view" model="ir.ui.view">
-            <field name="name">lxb.course.template.search</field>
+            <field name="name">lxb course template search</field>
             <field name="model">course.template</field>
             <field name="arch" type="xml">
                 <search string="招生信息">
+                    <field name="name"/>
                     <field name="recommend_status" />
                     <field name="wxxcx_published"/>
                     <group expand="0" string="分组,按照...">
-                        <filter string="是否推荐" domain="[]"
+                        <filter name='is_recommended' string="是否推荐" domain="[]"
                                 context="{'group_by':'recommend_status'}"/>
-                        <filter string="是否上架" domain="[]"
+                        <filter name='is_on_sale' string="是否上架" domain="[]"
                                 context="{'group_by':'wxxcx_published'}"/>
                     </group>
                 </search>
@@ -81,7 +82,6 @@
             <field name="name">招生信息</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">course.template</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="lxb_course_template_search_view"/>
             <field name="target">current</field>

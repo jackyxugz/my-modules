@@ -125,12 +125,13 @@
         </record>
 
         <record id="view_lxb_invoice_search_inherit" model="ir.ui.view">
-            <field name="name">lxb.account.invoice.search.inherit</field>
+            <field name="name">lxb account invoice search inherit</field>
             <field name="model">account.invoice</field>
             <field name="inherit_id" ref="account.view_account_invoice_filter" />
             <field name="priority" eval="9" />
             <field name="arch" type="xml">
-                <field name="journal_id" position="after">
+                <field name="partner_id" position="after">
+                <!--<field name="journal_id" position="after">-->
                     <field name="reference_contract"/>
                 </field>
             </field>
@@ -140,8 +141,7 @@
             <field name="name">开票</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">account.invoice</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph</field>
             <field name="search_view_id" ref="view_lxb_invoice_search_inherit" />
             <field name="domain">[]</field>
             <field name="context">{}</field>

@@ -12,14 +12,13 @@
 #
 ###############################################################################
 
-from odoo import models, api, fields
+from odoo import models, api,fields
 
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
-    teacher_ids = fields.One2many('lxb.teacher', 'emp_id', string='教师')
-
+    teacher_ids = fields.One2many('lxb.teacher','emp_id',string='教师')
     @api.onchange('user_id')
     def onchange_user(self):
         if self.user_id:

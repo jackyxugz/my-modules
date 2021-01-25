@@ -52,7 +52,6 @@
             <field name="name">Timings</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.timing</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_lxb_timing_search" />
             <field name="domain">[]</field>

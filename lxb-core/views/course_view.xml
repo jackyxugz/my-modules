@@ -61,9 +61,9 @@
                     <field name="parent_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Evaluation Type" domain="[]"
+                        <filter name="evaluation_type" string="Evaluation Type" domain="[]"
                             context="{'group_by':'evaluation_type'}" />
-                        <filter string="Parent Course" domain="[]"
+                        <filter name="parent_course" string="Parent Course" domain="[]"
                             context="{'group_by':'parent_id'}" />
                     </group>
                 </search>
@@ -73,7 +73,6 @@
             <field name="name">课程</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.course</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_lxb_course_search" />
             <field name="domain">[]</field>

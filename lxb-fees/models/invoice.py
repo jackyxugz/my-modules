@@ -13,13 +13,13 @@ from odoo import models, fields,api
 class LxbInvoice(models.Model):
     _inherit = 'account.invoice'
 
-    @api.one
+
     @api.depends('invoice_course_line_ids.class_hours','invoice_course_line_ids.course_id')
     def _compute_total_no(self):
         #按照课程行项目计算总课时数
         self.no_sessions = sum(line.class_hours for line in self.invoice_course_line_ids)
 
-    @api.one
+
     @api.depends('invoice_course_line_ids.course_id','invoice_course_line_ids.amount_ex',
                  'invoice_course_line_ids.price_subtotal','invoice_course_line_ids.discount',
                  'invoice_course_line_ids.invoice_line_tax_ids', 'company_id')
@@ -30,7 +30,7 @@ class LxbInvoice(models.Model):
         self.course_amount_total = sum(line.price_subtotal for line in self.invoice_course_line_ids)
         self.course_amount_tax = sum(line.course_tax for line in self.invoice_course_line_ids)
 
-    @api.one
+
     @api.depends('invoice_course_line_ids.course_id', 'invoice_course_line_ids.amount_ex',
                  'invoice_course_line_ids.price_subtotal', 'invoice_course_line_ids.discount',
                  'invoice_course_line_ids.invoice_line_tax_ids', 'company_id',
@@ -77,7 +77,7 @@ class LxbInvoiceCourseLine(models.Model):
     course_tax = fields.Monetary(string='税额',store=True,readonly=True,
                                  compute='_compute_subtotal')
 
-    @api.one
+
     @api.depends('course_id','amount_ex','discount','invoice_line_tax_ids')
     def _compute_subtotal(self):
         #计算税后金额

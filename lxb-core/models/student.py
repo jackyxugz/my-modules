@@ -2,11 +2,7 @@
 ###############################################################################
 #
 #
-#
 #   主要存放学生信息
-#
-#
-#
 #
 #
 ###############################################################################
@@ -50,18 +46,17 @@ class LxbStudent(models.Model):
     nationality = fields.Many2one('res.country', '国家')
     emergency_contact = fields.Many2one(
         'res.partner', '紧急联系人')
-    class_id = fields.Many2one('lxb.class',string='班级')
+    class_id = fields.Many2one('lxb.class', string='班级')
 
     already_partner = fields.Boolean('老学员?')
+    image = fields.Binary('图片')
     partner_id = fields.Many2one(
         'res.partner', 'Partner', required=True, ondelete="cascade")
-    gr_no = fields.Char("学号", size=20,required=True)
+    gr_no = fields.Char("学号", size=20, required=True)
     course_detail_ids = fields.One2many('lxb.student.course', 'student_id',
                                         '课程信息')
     company_id = fields.Many2one('res.company', '公司', required=True,
                                  default=lambda self: self.env.user.company_id)
-
-
 
     @api.constrains('birth_date')
     def _check_birthdate(self):

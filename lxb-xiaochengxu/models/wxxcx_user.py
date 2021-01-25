@@ -8,10 +8,9 @@
 #
 ###############################################################################
 
-from odoo import models, fields, api
+from odoo import models,fields,api
 
 from .. import defs
-
 
 class WxxcxUser(models.Model):
     _name = 'wxxcx.user'
@@ -33,11 +32,11 @@ class WxxcxUser(models.Model):
     register_ip = fields.Char('注册IP')
     last_login = fields.Datetime('登陆时间')
     ip = fields.Char('登陆IP')
-    status = fields.Selection([(key, value) for key, value in defs.WechatUserStatus.__dict__.items()
+    status = fields.Selection([(key,value) for key ,value in defs.WechatUserStatus.__dict__.items()
                                if not key.startswith('__') and not callable(key)],
                               string='状态', default=defs.WechatUserStatus.default[0])
-    register_type = fields.Selection([(key, value) for key, value in defs.WechatUserRegisterType.__dict__.items()
-                                      if not key.startswith('__') and not callable(key)], string='注册来源',
+    register_type = fields.Selection([(key,value) for key,value in defs.WechatUserRegisterType.__dict__.items()
+                                      if not  key.startswith('__') and not callable(key)], string='注册来源',
                                      default=defs.WechatUserRegisterType.app[0])
 
     partner_id = fields.Many2one('res.partner', required=True, ondelete='restrict', string='关联联系人', auto_join=True)  #
@@ -54,6 +53,7 @@ class WxxcxUser(models.Model):
             'wechat user open_id with create_uid is existed！'
         ),
     ]
+
 
     @api.depends('avatar_url')
     def _compute_avatar(self):

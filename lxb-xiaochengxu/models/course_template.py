@@ -74,6 +74,7 @@ class LxbCourse(models.Model):
     # 字符'property_id1:value_id1,property_id2:value_id2,'
     attr_val_str = fields.Char('课程详情', compute='_compute_attr_val_str',store=True)
 
+
     @api.depends('name','evaluation_type','subject_ids','serve_type','pay_type')
     def _compute_attr_val_str(self):
         for obj in self:

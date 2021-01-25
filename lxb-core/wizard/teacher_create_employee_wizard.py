@@ -20,7 +20,6 @@ class WizardLxbTeacherEmployee(models.TransientModel):
 
     user_boolean = fields.Boolean("要同时创建一个用户吗 ?", default=True)
 
-
     def create_employee(self):
         for record in self:
             active_id = self.env.context.get('active_ids', []) or []

@@ -8,13 +8,13 @@
     </t>
      <t t-jquery="div.oe_login_footer" t-operation="after">
             <div class="oe_login_footer" style="top:250px">
-                <a href="http://www.scott-odoo.com/" target="_blank">Provided by <span>Scott Liu</span></a>
+                <a href="http://www.szjuliu.com/" target="_blank">Provided by <span>Jacky</span></a>
             </div>
      </t>
 </t>
 <t t-extend="WebClient">
     <t t-jquery="span.url" t-operation="replace">
-        <span class="url"><a id="support_link" href="http://www.scott-odoo.com"
+        <span class="url"><a id="support_link" href="http://www.szjuliu.com"
     target="_blank"></a></span>
     </t>
 </t>

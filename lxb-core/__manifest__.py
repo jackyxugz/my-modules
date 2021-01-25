@@ -21,13 +21,11 @@
     'complexity': "easy",
     'author': 'Scott Liu',
     'website': 'http://www.scott-odoo.com',
-    'depends': ['board', 'document', 'hr', 'web', 'website'],
+    'depends': ['board', 'hr', 'web', 'website'],
     'data': [
         'wizard/teacher_create_employee_wizard_view.xml',
-        'wizard/teacher_create_user_wizard_view.xml',
         'wizard/student_create_user_wizard_view.xml',
         'wizard/generate_timetable_view.xml',
-        'wizard/time_table_report.xml',
         'wizard/session_confirmation.xml',
         'security/lxb_security.xml',
         'security/ir.model.access.csv',
@@ -61,7 +59,8 @@
     'css': ['static/src/css/base.css'],
     'qweb': [
         'static/src/xml/base.xml',
-        'static/src/xml/dashboard_ext_lexuebao.xml'],
+        'static/src/xml/dashboard_ext_lexuebao.xml',
+        ],
     'js': [],
     'images': [
         'static/description/icon_faculty.png',

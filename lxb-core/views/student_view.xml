@@ -13,10 +13,11 @@
                             <div t-attf-class="oe_kanban_global_click o_res_partner_kanban">
                                 <div class="o_kanban_image">
                                     <t t-if="record.image.value">
-                                        <img t-att-src="kanban_image('lxb.student', 'image', record.id.value)"/>
+                                        <img t-att-src="kanban_image('lxb.student', 'image', record.id.value)"
+                                             alt="student"/>
                                     </t>
                                     <t t-if="!record.image.value">
-                                        <img t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                        <img t-att-src='_s + "/base/static/src/img/avatar.png"' alt="avatar"/>
                                     </t>
                                 </div>
                                 <div class="oe_kanban_details">
@@ -64,22 +65,23 @@
                     <field name="gr_no"/>
                     <field name="name"/>
                     <field name="emergency_contact"/>
-                    <field name="nationality" />
+                    <field name="nationality"/>
                     <field name="company_id"/>
                     <field name="course_detail_ids" widget="many2many_tags"/>
                 </tree>
             </field>
         </record>
         <record id="view_lxb_student_form" model="ir.ui.view">
-            <field name="name">lxb.student.form</field>
+            <field name="name">lxb student form</field>
             <field name="model">lxb.student</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="学生">
+                    <field name="name" invisible="1"/>
                     <sheet>
                         <div class="oe_title">
                             <field name="already_partner"/>
-                            <label string="老学员？"/>
+                            <label for="partner_id" string="老学员？"/>
                             <field name="partner_id" placeholder="Partner" options="{'no_create_edit': True}"
                                    attrs="{'required':[('already_partner','=',True)],'invisible': [('already_partner','=', False)]}"/>
                         </div>
@@ -108,7 +110,7 @@
                                            context="{'show_address': 1}"
                                            options='{"always_reload": True}'/>
                                     <field name="user_id" string="User" readonly="1"/>
-                                    <field name="email" />
+                                    <field name="email"/>
                                 </group>
                                 <group string="地址信息"
                                        name="address">
@@ -149,7 +151,7 @@
 
                                     <field name="gr_no" required="1"/>
                                     <field name="company_id"/>
-                                    <field name="class_id" />
+                                    <field name="class_id"/>
                                 </group>
                                 <group>
                                     <separator string="入学信息"
@@ -163,7 +165,8 @@
                                         </tree>
                                         <form>
                                             <group cols="2" colspan="2">
-                                                <field name="course_id" domain="[('company_id','=',parent.company_id)]"/>
+                                                <field name="course_id"
+                                                       domain="[('company_id','=',parent.company_id)]"/>
                                                 <field name="schedule_id" domain="[('course_id', '=', course_id)]"/>
                                                 <field name="roll_number"/>
                                             </group>
@@ -180,16 +183,13 @@
             </field>
         </record>
         <record id="view_lxb_student_search" model="ir.ui.view">
-            <field name="name">lxb.student.search</field>
+            <field name="name">lxb student search</field>
             <field name="model">lxb.student</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="学生">
                     <field name="name"/>
-
-                    <newline/>
                     <group expand="0" string="Group By...">
-
                         <filter name="nationality" string="国家"
                                 domain="[]" context="{'group_by':'nationality'}"/>
                         <filter name="language" string="Language"
@@ -202,7 +202,6 @@
             <field name="name">学生</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lxb.student</field>
-            <field name="view_type">form</field>
             <field name="view_mode">kanban,tree,form</field>
             <field name="search_view_id" ref="view_lxb_student_search"/>
             <field name="domain">[]</field>

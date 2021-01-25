@@ -8,6 +8,7 @@
                 <tree>
                     <field name="proj_name" optional="show"/>
                     <field name="name"/>
+                    <field name="hk_name_en"/>
                     <field name="hk_is_secr"/>
                     <field name="hk_addr_is_change"/>
                     <field name="hk_is_mpf"/>
@@ -75,6 +76,7 @@
                                 <group name="group_2" col="2">
                                     <group name="group_left">
                                         <field name="name"/>
+                                        <field name="hk_name_en"/>
                                         <field name="hk_addr"/>
                                         <field name="hk_http"/>
                                         <field name="hk_industry"/>
@@ -175,6 +177,7 @@
                     <field name="proj_name"/>
                     <field name="cn_comp_name"/>
                     <field name="name"/>
+                    <field name="hk_name_en"/>
                 </search>
             </field>
         </record>
